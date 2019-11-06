@@ -11,10 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 ## Basic Examples ##
 
     // For: http://laravel-blog.me/hello
@@ -33,6 +29,10 @@ Route::get('/', function () {
     // });
 
 # End Of Basic Examples
+
+
+
+Route::get('/', 'PagesController@index');
 
 // For: http://laravel-blog.me/about
 Route::get('/about', function () {
