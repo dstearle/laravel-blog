@@ -16,7 +16,11 @@
                 <div class="card-body">
 
                     {{-- Post Title --}}
-                    <h3>{{ $post->title }}</h3>
+                    <h3>
+
+                        <a href="/posts/{{ $post->id }}">{{ $post->title }}</a>
+
+                    </h3>
 
                     <small>Written on {{ $post->created_at }}</small>
 

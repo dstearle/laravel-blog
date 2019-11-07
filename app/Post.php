@@ -11,7 +11,7 @@ class Post extends Model
     protected $table = 'posts';
 
     // Primary Key: If you want to change the primary key
-    public $id = 'id';
+    // public $id = 'id';
 
     // Timestamps: If you want to toggle timestamps
     public $timestamps = true;
