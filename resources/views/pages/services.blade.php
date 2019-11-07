@@ -7,12 +7,12 @@
     {{-- Checks to see if there is at least one service available --}}
     @if(count($services) > 0)
 
-        <ul>
+        <ul class="list-group">
 
             {{-- Foreach loop that grabs each item in the array --}}
             @foreach($services as $service)
 
-                <li>{{ $service }}</li>
+                <li class="list-group-item">{{ $service }}</li>
 
             @endforeach
 
