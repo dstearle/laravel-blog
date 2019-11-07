@@ -6,7 +6,7 @@
     <h1>Posts</h1>
 
     {{-- Checks if there are any posts to be shown --}}
-    @if(count($posts) > 1)
+    @if(count($posts) > 0)
 
         {{-- Foreach loop for posts --}}
         @foreach($posts as $post)
@@ -29,6 +29,9 @@
             </div>
 
         @endforeach
+
+        {{-- Pagination Links --}}
+        {{ $posts->links() }}
 
     {{-- If no posts are found inform user --}}
     @else

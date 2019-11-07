@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
+use DB;
 
 class PostsController extends Controller
 {
@@ -15,8 +16,21 @@ class PostsController extends Controller
     public function index()
     {
 
-        // The variable to hold the function that returns all of the posts
-        $posts = Post::all();
+        // Example of returning all posts with basic function
+        // $posts = Post::all();
+
+        // Example if you wanted to bring back one post
+        // return Post::where('title', 'Post Two')->get();
+
+        // Example if you wanted to use SQL to return all posts
+        // $posts = DB::select('SELECT * FROM posts');
+
+        // The variable to hold the function that returns all of the posts by descending order
+        // $posts = Post::orderBy('title', 'desc')->get();
+
+        // Same as above but with pagination (showing ten posts per page) and ordered by ascending order
+        $posts = Post::orderBy('title', 'asc')->paginate(10);
+
         // The view that displays all of the posts
         return view('posts.index')->with('posts', $posts);
 
