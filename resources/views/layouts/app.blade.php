@@ -14,7 +14,14 @@
 
     <body>
 
-        @yield('content')
+        {{-- Navbar --}}
+        @include('inc.navbar')
+
+        <div class="container">
+
+            @yield('content')
+
+        </div>
         
     </body>
 
