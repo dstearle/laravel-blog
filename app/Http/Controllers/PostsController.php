@@ -14,7 +14,7 @@ class PostsController extends Controller
      */
     public function index()
     {
-        
+
         // The variable to hold the function that returns all of the posts
         $posts = Post::all();
         // The view that displays all of the posts
@@ -51,7 +51,13 @@ class PostsController extends Controller
      */
     public function show($id)
     {
-        //
+        
+        // The variable that finds the id for the post from the database
+        $post = Post::find($id);
+
+        // The view for that post
+        return view('posts.show')->with('post', $post);
+
     }
 
     /**
