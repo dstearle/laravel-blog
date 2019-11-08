@@ -19,6 +19,9 @@
 
         <div class="container">
 
+            {{-- Error Alerts --}}
+            @include('inc.messages')
+
             @yield('content')
 
         </div>

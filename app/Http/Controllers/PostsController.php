@@ -57,7 +57,17 @@ class PostsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        // Form validation
+        $this->validate($request, [
+
+            'title' => 'required',
+            'body' => 'required'
+
+        ]);
+
+        return 123;
+
     }
 
     /**
