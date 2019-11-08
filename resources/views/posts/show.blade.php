@@ -10,7 +10,7 @@
             <h1>{{ $post->title }}</h1>
 
             {{-- Body --}}
-            <div>{{ $post->body }}</div>
+            <div>{!! $post->body !!}</div>
 
             <hr>
 
