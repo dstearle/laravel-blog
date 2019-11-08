@@ -45,6 +45,17 @@
 
         </ul>
 
+        {{-- Create Post --}}
+        <ul class="nv navbar-nav navbar-right">
+
+            <li  class="nav-item">
+
+                <a class="nav-link" href="/posts/create">Create Post</a>
+
+            </li>
+
+        </ul>
+
     </div>
 
 </nav>
