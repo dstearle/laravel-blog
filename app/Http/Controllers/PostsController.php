@@ -103,7 +103,13 @@ class PostsController extends Controller
      */
     public function edit($id)
     {
-        //
+        
+        // The variable that finds the id for the post from the database
+        $post = Post::find($id);
+
+        // The view for that post to be edited
+        return view('posts.edit')->with('post', $post);
+
     }
 
     /**
@@ -115,7 +121,25 @@ class PostsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        
+        // Form validation
+        $this->validate($request, [
+
+            'title' => 'required',
+            'body' => 'required'
+
+        ]);
+
+        // Update post
+        $post = Post::find($id);
+
+        // Input fields
+        $post->title = $request->input('title');
+        $post->body = $request->input('body');
+        $post->save();
+
+        return redirect('/posts')->with('success', 'Post Updated');
+
     }
 
     /**
