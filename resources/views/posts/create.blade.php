@@ -25,6 +25,7 @@
 
         </div>
 
+        {{-- Submit Button --}}
         {{ Form::submit('Submit', ['class' => 'btn btn-lg btn-secondary']) }}
 
     {{ Form::close() }}
