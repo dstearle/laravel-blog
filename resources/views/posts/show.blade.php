@@ -12,14 +12,21 @@
             {{-- Body --}}
             <div>{!! $post->body !!}</div>
 
+            {{-- Created At --}}
+            <div>
+
+                <small>Written on {{ $post->created_at }}</small>
+
+            </div>
+
             <hr>
 
             <div class="row">
 
-                {{-- Create At --}}
+                {{-- Back Button --}}
                 <div class="col-6 d-flex justify-content-start">
 
-                    <small>Written on {{ $post->created_at }}</small>
+                <a href="/posts/{{ $post->id }}/edit" class="btn btn-lg btn-success">Edit</a>
 
                 </div>
 
