@@ -28,8 +28,8 @@ class PostsController extends Controller
         // The variable to hold the function that returns all of the posts by descending order
         // $posts = Post::orderBy('title', 'desc')->get();
 
-        // Same as above but with pagination (showing ten posts per page) and ordered by ascending order
-        $posts = Post::orderBy('title', 'asc')->paginate(10);
+        // Same as above but with pagination (showing ten posts per page) and ordered by created_at in ascending order
+        $posts = Post::orderBy('created_at', 'asc')->paginate(10);
 
         // The view that displays all of the posts
         return view('posts.index')->with('posts', $posts);
@@ -66,7 +66,15 @@ class PostsController extends Controller
 
         ]);
 
-        return 123;
+        // Create post
+        $post = new Post;
+
+        // Input fields
+        $post->title = $request->input('title');
+        $post->body = $request->input('body');
+        $post->save();
+
+        return redirect('/posts')->with('success', 'Post Created');
 
     }
 
