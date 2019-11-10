@@ -49,16 +49,28 @@
                             <tr>
 
                                 {{-- Post Title --}}
-                                <th>{{ $post->title }}</th>
+                                <td>{{ $post->title }}</td>
 
                                 {{-- Edit Post --}}
-                                <th>
+                                <td>
                                     
                                     <a href="/posts/{{$post->id}}/edit" class="btn btn-secondary">Edit</a>
                                 
-                                </th>
+                                </td>
 
-                                <th></th>
+                                {{-- Delete Post --}}
+                                <td>
+
+                                    {{-- Delete Button --}}
+                                    {!! Form::open(['action' => ['PostsController@destroy', $post->id], 'method' => 'POST']) !!}
+
+                                        {{ Form::hidden('_method', 'DELETE') }}
+
+                                        {{ Form::submit('Delete', ['class' => 'btn btn-lg btn-danger ml-1']) }}
+
+                                    {!! Form::close() !!}
+
+                                </td>
 
                             </tr>
 
