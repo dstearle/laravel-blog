@@ -22,7 +22,8 @@
 
                     </h3>
 
-                    <small>Written on {{ $post->created_at }}</small>
+                    {{-- Timestamp & Author --}}
+                    <small>Written on {{ $post->created_at }} by {{ $post->user->name}}</small>
 
                 </div>
 
