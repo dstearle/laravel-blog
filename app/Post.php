@@ -16,4 +16,10 @@ class Post extends Model
     // Timestamps: If you want to toggle timestamps
     public $timestamps = true;
 
+    public function user() {
+
+        return $this->belongsTo('App\User');
+        
+    }
+
 }
