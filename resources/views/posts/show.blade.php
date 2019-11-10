@@ -12,10 +12,10 @@
             {{-- Body --}}
             <div>{!! $post->body !!}</div>
 
-            {{-- Created At --}}
+            {{-- Timestamp & Author --}}
             <div>
 
-                <small>Written on {{ $post->created_at }}</small>
+                <small>Written on {{ $post->created_at }} by {{ $post->user->name}}</small>
 
             </div>
 
