@@ -1,60 +1,122 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-5">
 
-    {{-- Brand --}}
-    <a class="navbar-brand" href="/">{{ config('app.name', 'laravel-blog')}}</a>
+    <div class="container">
 
-    {{-- Collapsed List --}}
-    <button 
-        class="navbar-toggler" 
-        type="button" 
-        data-toggle="collapse" 
-        data-target="#navbarsExampleDefault" 
-        aria-controls="navbarsExampleDefault" 
-        aria-expanded="false" 
-        aria-label="Toggle navigation"
-    >
+        {{-- Brand --}}
+        <a class="navbar-brand" href="{{ url('/') }}">
 
-        <span class="navbar-toggler-icon"></span>
+            {{ config('app.name', 'Laravel') }}
 
-    </button>
+        </a>
 
-    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        {{-- Collapsed List --}}
+        <button 
+            class="navbar-toggler" 
+            type="button"
+            data-toggle="collapse" 
+            data-target="#navbarSupportedContent" 
+            aria-controls="navbarSupportedContent" 
+            aria-expanded="false" 
+            aria-label="{{ __('Toggle navigation') }}"
+        >
 
-        {{-- Links --}}
-        <ul class="navbar-nav mr-auto">
+            <span class="navbar-toggler-icon"></span>
 
-            {{-- Home --}}
-            <li class="nav-item">
-                <a class="nav-link" href="/">Home</a>
-            </li>
+        </button>
 
-            {{-- About --}}
-            <li class="nav-item">
-                <a class="nav-link" href="/about">About</a>
-            </li>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-            {{-- Services --}}
-            <li class="nav-item">
-                <a class="nav-link" href="/services">Services</a>
-            </li>
+            <!-- Left Side Of Navbar -->
+            <ul class="navbar-nav mr-auto">
 
-            {{-- Posts --}}
-            <li class="nav-item">
-                <a class="nav-link" href="/posts">Posts</a>
-            </li>
+                {{-- Home --}}
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+    
+                {{-- About --}}
+                <li class="nav-item">
+                    <a class="nav-link" href="/about">About</a>
+                </li>
+    
+                {{-- Services --}}
+                <li class="nav-item">
+                    <a class="nav-link" href="/services">Services</a>
+                </li>
+    
+                {{-- Posts --}}
+                <li class="nav-item">
+                    <a class="nav-link" href="/posts">Posts</a>
+                </li>
+    
+            </ul>
 
-        </ul>
+            <!-- Right Side Of Navbar -->
+            <ul class="navbar-nav ml-auto">
 
-        {{-- Create Post --}}
-        <ul class="nv navbar-nav navbar-right">
+                <!-- Authentication Links -->
+                @guest
 
-            <li  class="nav-item">
+                    {{-- Login --}}
+                    <li class="nav-item">
 
-                <a class="nav-link" href="/posts/create">Create Post</a>
+                        <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
 
-            </li>
+                    </li>
 
-        </ul>
+                    {{-- Register --}}
+                    @if (Route::has('register'))
+
+                        <li class="nav-item">
+
+                            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+
+                        </li>
+
+                    @endif
+
+                @else
+
+                    <li class="nav-item dropdown">
+
+                        <a 
+                            id="navbarDropdown" 
+                            class="nav-link dropdown-toggle" 
+                            href="#" 
+                            role="button" 
+                            data-toggle="dropdown" 
+                            aria-haspopup="true" 
+                            aria-expanded="false" 
+                            v-pre
+                        >
+
+                            {{ Auth::user()->name }} <span class="caret"></span>
+                            
+                        </a>
+
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+
+                            <a class="dropdown-item" href="{{ route('logout') }}"
+                               onclick="event.preventDefault();
+                                             document.getElementById('logout-form').submit();">
+                                {{ __('Logout') }}
+                            </a>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+
+                                @csrf
+
+                            </form>
+
+                        </div>
+
+                    </li>
+
+                @endguest
+
+            </ul>
+
+        </div>
 
     </div>
 
