@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use App\Post;
 use DB;
 
@@ -214,7 +215,7 @@ class PostsController extends Controller
         if($request->hasFile('cover_image')) {
 
             $post->cover_image = $fileNameToStore;
-            
+
         };
         $post->save();
 
@@ -239,6 +240,13 @@ class PostsController extends Controller
 
             // If user is not authorized to delete the post redirect them back to viewing posts
             return redirect('/posts')->with('error', 'Unauthorized Page');
+
+        }
+
+        // Deletes the image
+        if($post->cover_image != 'noimage.jpg'){
+
+            Storage::delete('public/cover_images/' . $post->cover_image);
 
         }
 
