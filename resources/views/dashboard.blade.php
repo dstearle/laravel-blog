@@ -4,27 +4,40 @@
 
 <div class="container">
 
-    <div class="row justify-content-center">
+    {{-- Title --}}
+    <h1>Dashboard</h1>
+
+    <div class="row">
 
         <div class="col-md-8">
 
             <div class="card">
 
-                {{--  --}}
-                <div class="card-header">Dashboard</div>
-
                 <div class="card-body">
+
                     @if (session('status'))
+
                         <div class="alert alert-success" role="alert">
+
                             {{ session('status') }}
+
                         </div>
+
                     @endif
 
-                    {{-- Create Posts Link --}}
-                    <a href="/posts/create" class="btn btn-success mb-3">Create Post</a>
+                    <div class="row">
 
-                    {{-- Table Title --}}
-                    <h3>Your Blog Posts</h3>
+                        {{-- Table Title --}}
+                        <h3 class="col-8">Your Blog Posts</h3>
+
+                        {{-- Create Posts Link --}}
+                        <div class="col-4">
+
+                            <a href="/posts/create" class="btn btn-block btn-success mb-3">Create Post</a>
+
+                        </div>
+
+                    </div>
 
                     {{-- Checks For Posts --}}
                     @if(count($posts) > 0)
@@ -54,7 +67,7 @@
                                 {{-- Edit Post --}}
                                 <td>
                                     
-                                    <a href="/posts/{{$post->id}}/edit" class="btn btn-secondary">Edit</a>
+                                    <a href="/posts/{{$post->id}}/edit" class="btn btn-lg btn-block btn-secondary">Edit</a>
                                 
                                 </td>
 
@@ -66,7 +79,7 @@
 
                                         {{ Form::hidden('_method', 'DELETE') }}
 
-                                        {{ Form::submit('Delete', ['class' => 'btn btn-lg btn-danger ml-1']) }}
+                                        {{ Form::submit('Delete', ['class' => 'btn btn-lg btn-block btn-danger']) }}
 
                                     {!! Form::close() !!}
 
