@@ -7,7 +7,7 @@
 
     {{-- Form --}}
     {{-- Note: This form comes from the LaravelCollective composer package --}}
-    {{ Form::open(['action' => 'PostsController@store', 'method' => 'POST']) }}
+    {{ Form::open(['action' => 'PostsController@store', 'method' => 'POST', 'enctype' => 'multipart/data']) }}
 
         {{-- Post Title --}}
         <div class="form-group">
@@ -22,6 +22,12 @@
 
             {{ Form::label('body', 'Body') }}
             {{ Form::textarea('body', '', ['id' => 'article-ckeditor', 'class' => 'form-control', 'placeholder' => 'Body Text']) }}
+
+        </div>
+
+        <div class="form-group">
+
+            {{ Form::file('cover_image') }}
 
         </div>
 
