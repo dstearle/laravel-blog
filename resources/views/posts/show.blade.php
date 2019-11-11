@@ -9,6 +9,9 @@
             {{-- Title --}}
             <h1>{{ $post->title }}</h1>
 
+            {{-- Post Image --}}
+            <img style="width: 100%" src="/storage/cover_images/{{ $post->cover_image}}" alt="">
+
             {{-- Body --}}
             <div>{!! $post->body !!}</div>
 
