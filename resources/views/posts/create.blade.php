@@ -7,7 +7,7 @@
 
     {{-- Form --}}
     {{-- Note: This form comes from the LaravelCollective composer package --}}
-    {{ Form::open(['action' => 'PostsController@store', 'method' => 'POST', 'enctype' => 'multipart/data']) }}
+    {{ Form::open(['action' => 'PostsController@store', 'method' => 'POST', 'enctype' => 'multipart/form-data']) }}
 
         {{-- Post Title --}}
         <div class="form-group">
