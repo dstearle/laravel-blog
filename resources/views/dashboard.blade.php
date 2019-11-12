@@ -9,7 +9,7 @@
 
     <div class="row">
 
-        <div class="col-md-8">
+        <div class="col">
 
             <div class="card">
 
@@ -33,7 +33,7 @@
                         {{-- Create Posts Link --}}
                         <div class="col-4">
 
-                            <a href="/posts/create" class="btn btn-block btn-success mb-3">Create Post</a>
+                            <a href="/posts/create" class="btn  btn-lg btn-block btn-success mb-3">Create Post</a>
 
                         </div>
 
@@ -67,7 +67,7 @@
                                 {{-- Edit Post --}}
                                 <td>
                                     
-                                    <a href="/posts/{{$post->id}}/edit" class="btn btn-lg btn-block btn-secondary">Edit</a>
+                                    <a href="/posts/{{$post->id}}/edit" class="btn btn-block btn-secondary">Edit</a>
                                 
                                 </td>
 
@@ -79,7 +79,7 @@
 
                                         {{ Form::hidden('_method', 'DELETE') }}
 
-                                        {{ Form::submit('Delete', ['class' => 'btn btn-lg btn-block btn-danger']) }}
+                                        {{ Form::submit('Delete', ['class' => 'btn btn-block btn-danger']) }}
 
                                     {!! Form::close() !!}
 
