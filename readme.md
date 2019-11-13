@@ -41,6 +41,14 @@ Dashboard:
 
 - Registered guests can use the dashboard page to create, edit, or delete posts.
 
+<br>
+
+**Notes:**
+
+- For making a Larael site live on AWS through elastic beanstalk refer to: https://www.youtube.com/watch?v=ISVaMijczKc
+
+<br>
+
 **Dependencies:**
 
 - LaravelCollective: https://github.com/LaravelCollective/docs/blob/5.6/html.md
