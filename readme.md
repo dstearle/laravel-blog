@@ -2,6 +2,12 @@
 
 <br>
 
+<strong>Link To Live Website :</strong>
+
+- http:
+
+<br>
+
 **What Is This Project? :**
 
 - laravel-blog is a simple blog website where users can create posts for others to see. Built with Laravel, this site uses the MVC (Model, View, Controller) design pattern to control what content can be viewed by who.
