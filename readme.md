@@ -4,7 +4,7 @@
 
 <strong>Link To Live Website :</strong>
 
-- http:
+- http: http://laravelblog-env.rxepymbxcy.us-west-2.elasticbeanstalk.com/
 
 <br>
 
